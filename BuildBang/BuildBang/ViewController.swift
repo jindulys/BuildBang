@@ -18,10 +18,10 @@ class ViewController: UIViewController {
 		var valid: Bool
 	}
 	
-	let buildBlockHeight: CGFloat = 60
-	let buildBlockWidth: CGFloat = 180
+	let buildBlockHeight: CGFloat = 35
+	let buildBlockWidth: CGFloat = 280
 	
-	var gameLevel: NSTimeInterval = 6
+	var gameLevel: NSTimeInterval = 3
 	
 	let securityHeight: CGFloat = 260
 	
@@ -209,8 +209,9 @@ class ViewController: UIViewController {
 						view.frame.origin.x += moveDistance
 						}) { (someValue) -> Void in
 					}
-					
 				}
+				
+				gameRange.startX += moveDistance
 			}
 			
 			if rightSaveSpace > CGRectGetWidth(self.view.frame) - gameRange.startX - gameRange.effectiveWidth {
@@ -225,8 +226,9 @@ class ViewController: UIViewController {
 						view.frame.origin.x -= moveDistance
 						}) { (someValue) -> Void in
 					}
-					
 				}
+				
+				gameRange.startX -= moveDistance
 			}
 			
 			
