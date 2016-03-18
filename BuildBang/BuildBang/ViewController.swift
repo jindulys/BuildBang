@@ -18,10 +18,10 @@ class ViewController: UIViewController {
 		var valid: Bool
 	}
 	
-	let buildBlockHeight: CGFloat = 20
+	let buildBlockHeight: CGFloat = 60
 	let buildBlockWidth: CGFloat = 180
 	
-	var gameLevel: NSTimeInterval = 5
+	var gameLevel: NSTimeInterval = 2
 	
 	let securityHeight: CGFloat = 260
 	
@@ -40,13 +40,13 @@ class ViewController: UIViewController {
 	var stackedView: [UIView] = []
 	
 	// Position Adjustment Metrics
-	let leftSaveSpace: CGFloat = 120
-	let rightSaveSpace: CGFloat = 120
+	let leftSaveSpace: CGFloat = 80
+	let rightSaveSpace: CGFloat = 80
 	
 	// Bonus Metrics
 	let bonusWidth: CGFloat = 20.0
 	var straightPerfectTime: Int = 0
-	let bonusThreshold = 2
+	let bonusThreshold = 1
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
 			buildBlock.layer.removeAllAnimations()
 			buildBlock.removeFromSuperview()
 			
-			print("Current one frame is x:\(currentPresentationLayer.frame.origin.x) y: \(currentPresentationLayer.frame.origin.y)")
+			//print("Current one frame is x:\(currentPresentationLayer.frame.origin.x) y: \(currentPresentationLayer.frame.origin.y)")
 			
 			// First, we judge if there has some intersection
 			
@@ -123,7 +123,6 @@ class ViewController: UIViewController {
 			
 			
 			if thisTurnResultRange.valid == false {
-				print("game over")
 				self.scoreLabel?.text = "Game Over!!! Your score is \(currentScore)"
 				
 				self.restartButton?.hidden = false
@@ -190,6 +189,40 @@ class ViewController: UIViewController {
 			}
 			
 			
+			// If we are too left-shifted or right-shifted, move views to center
+			if gameRange.startX < leftSaveSpace {
+				// Move to right
+				let screenWidth = CGRectGetWidth(self.view.frame)
+				let midMinX = (screenWidth - gameRange.effectiveWidth)/2.0
+				
+				let moveDistance = midMinX - gameRange.startX
+				
+				for view in self.stackedView {
+					UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+						view.frame.origin.x += moveDistance
+						}) { (someValue) -> Void in
+					}
+					
+				}
+			}
+			
+			if rightSaveSpace > CGRectGetWidth(self.view.frame) - gameRange.startX - gameRange.effectiveWidth {
+				// Move to left
+				let screenWidth = CGRectGetWidth(self.view.frame)
+				let midMaxX = (screenWidth + gameRange.effectiveWidth)/2.0
+				
+				let moveDistance = gameRange.startX + gameRange.effectiveWidth - midMaxX
+				
+				for view in self.stackedView {
+					UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+						view.frame.origin.x -= moveDistance
+						}) { (someValue) -> Void in
+					}
+					
+				}
+			}
+			
+			
 			createNewBlockFromLeft(true, width: gameRange.effectiveWidth)
 			
 			
@@ -238,7 +271,6 @@ class ViewController: UIViewController {
 			UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
 				view.frame.origin.y += self.buildBlockHeight
 				}) { (someValue) -> Void in
-					print("move")
 			}
 	
 		}
