@@ -1,0 +1,4 @@
+use_frameworks!
+target "BuildBang" do
+   pod 'Animo'
+end

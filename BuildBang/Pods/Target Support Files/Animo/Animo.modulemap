@@ -1,0 +1,6 @@
+framework module Animo {
+  umbrella header "Animo-umbrella.h"
+
+  export *
+  module * { export * }
+}
