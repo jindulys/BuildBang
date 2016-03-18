@@ -21,7 +21,9 @@ class ViewController: UIViewController {
 	let buildBlockHeight: CGFloat = 20
 	let buildBlockWidth: CGFloat = 180
 	
-	var gameLevel: NSTimeInterval = 6
+	var gameLevel: NSTimeInterval = 5
+	
+	let securityHeight: CGFloat = 260
 	
 	var nextStartY: CGFloat = 0.0
 	
@@ -36,6 +38,15 @@ class ViewController: UIViewController {
 	var gameRange: EffectiveRange = EffectiveRange(startX: 0, effectiveWidth: 0.0, valid: true)
 	
 	var stackedView: [UIView] = []
+	
+	// Position Adjustment Metrics
+	let leftSaveSpace: CGFloat = 120
+	let rightSaveSpace: CGFloat = 120
+	
+	// Bonus Metrics
+	let bonusWidth: CGFloat = 20.0
+	var straightPerfectTime: Int = 0
+	let bonusThreshold = 2
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -106,6 +117,8 @@ class ViewController: UIViewController {
 			
 			// First, we judge if there has some intersection
 			
+			let previousRange = gameRange
+			
 			let thisTurnResultRange = retreiveNewGameRangeWithFrame(currentPresentationLayer.frame)
 			
 			
@@ -116,27 +129,65 @@ class ViewController: UIViewController {
 				self.restartButton?.hidden = false
 				return
 			}
+			
 			currentScore += 1
 			self.scoreLabel?.text = String("Score: \(currentScore)")
+			
 			gameRange = thisTurnResultRange
+			
+			// here we add some effect for "perfect" match!
+			// TODO: test
+			
+			var perfectMatch = false
+			if abs(previousRange.effectiveWidth - self.gameRange.effectiveWidth) < 10.0 {
+				gameRange = previousRange
+				perfectMatch = true
+				
+				self.straightPerfectTime += 1
+				
+				if self.straightPerfectTime == bonusThreshold {
+					self.straightPerfectTime = 0
+					gameRange.effectiveWidth += bonusWidth
+					
+					if gameRange.effectiveWidth > buildBlockWidth {
+						gameRange.effectiveWidth = buildBlockWidth
+					}
+				}
+			} else {
+				self.straightPerfectTime = 0
+			}
 			
 			// Secondly, if game continue, we should use new gameRange truncate our current buildBlock to two parts.
 			if gameRange.startX > CGRectGetMinX(currentPresentationLayer.frame) {
 				// Drop Left Part
 				
-				// Demo first no animation
-				let keptView = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
-				keptView.backgroundColor = randomColor()
-				self.stackedView.append(keptView)
+				
 			} else {
 				// Drop Right Part
 				
-				// Demo first no animation
-				let keptView = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
-				keptView.backgroundColor = randomColor()
-				self.stackedView.append(keptView)
 			}
 			
+			// Demo first no animation
+			let keptView = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
+			keptView.backgroundColor = randomColor()
+			self.stackedView.append(keptView)
+			
+			if perfectMatch {
+				keptView.layer.runAnimation(
+					Animo.autoreverse(
+						Animo.group(
+							Animo.scaleX(by:2, duration: 1, timingMode: .EaseInOutBack),
+							Animo.scaleY(by:0.5, duration: 1, timingMode: .EaseInOutBack)
+						)
+					)
+				)
+			}
+			
+			
+			// If we are two high, move the bottomest one off the screen.
+			if nextStartY < securityHeight {
+				moveStackDropOneLevel()
+			}
 			
 			
 			createNewBlockFromLeft(true, width: gameRange.effectiveWidth)
@@ -171,6 +222,28 @@ class ViewController: UIViewController {
 		}
 		
 		return EffectiveRange(startX: newStartX, effectiveWidth: newWidth, valid: true)
+	}
+	
+	func moveStackDropOneLevel() {
+		let lastView = self.stackedView.first
+		
+		UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+			lastView!.frame.origin.y += self.buildBlockHeight
+			}) { (someValue) -> Void in
+				self.stackedView = Array(self.stackedView.dropFirst())
+				lastView?.removeFromSuperview()
+		}
+		
+		for view in self.stackedView {
+			UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+				view.frame.origin.y += self.buildBlockHeight
+				}) { (someValue) -> Void in
+					print("move")
+			}
+	
+		}
+		
+		nextStartY += buildBlockHeight
 	}
 
 	// Build a view with rect and add it to left or right side of the screen
