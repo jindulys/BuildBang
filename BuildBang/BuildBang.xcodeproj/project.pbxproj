@@ -220,6 +220,7 @@
 				TargetAttributes = {
 					F45A3D5A1C9C468900B9923E = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 655YRAVK2U;
 					};
 					F45A3D6E1C9C468A00B9923E = {
 						CreatedOnToolsVersion = 7.2;
@@ -475,10 +476,13 @@
 			baseConfigurationReference = 268069E2D186AF7BC64BC670 /* Pods-BuildBang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuildBang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BuildBang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -487,10 +491,13 @@
 			baseConfigurationReference = 61D06ED73B612AD44509AE92 /* Pods-BuildBang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuildBang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BuildBang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

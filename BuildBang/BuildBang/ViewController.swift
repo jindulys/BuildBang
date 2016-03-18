@@ -31,26 +31,17 @@ class ViewController: UIViewController {
 	
 	var scoreLabel: UILabel?
 	
+	var restartButton: UIButton?
+	
 	var gameRange: EffectiveRange = EffectiveRange(startX: 0, effectiveWidth: 0.0, valid: true)
+	
+	var stackedView: [UIView] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
 		
-		// SetStartY with current Screen Info
-		nextStartY = CGRectGetMaxY(self.view.frame) - buildBlockHeight
-		
-		// Create Center Base One
-		buildViewWithRect(CGRectMake((CGRectGetWidth(self.view.frame) - buildBlockWidth)/2.0, nextStartY, buildBlockWidth, buildBlockHeight))
-		nextStartY -= buildBlockHeight
-		
-		// Setup EffectiveRange
-		gameRange = EffectiveRange(startX: (CGRectGetWidth(self.view.frame) - buildBlockWidth)/2.0, effectiveWidth: buildBlockWidth, valid: true)
-		
-		
-		// Bring up first block
-		
-		createNewBlockFromLeft(true, width: buildBlockWidth)
+		startNewGame()
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -63,11 +54,47 @@ class ViewController: UIViewController {
 		let tapGestrue = UITapGestureRecognizer(target: self, action: "tappedScreen:")
 		self.view.addGestureRecognizer(tapGestrue)
 		
-		self.scoreLabel = UILabel(frame: CGRectMake(160, 70, 160, 30))
+		self.scoreLabel = UILabel(frame: CGRectMake(90, 70, 260, 30))
 		self.scoreLabel?.textColor = UIColor.blackColor()
 		self.scoreLabel?.text = String("Score: \(currentScore)")
 		self.scoreLabel?.font = UIFont.systemFontOfSize(18.0)
 		self.view.addSubview(self.scoreLabel!)
+		
+		self.restartButton = UIButton(frame: CGRectMake(90, 170, 260, 30))
+		self.restartButton?.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+		self.restartButton?.titleLabel?.font = UIFont.systemFontOfSize(18.0)
+		self.restartButton?.setTitle("Try Once More @_@ 😈😈😈", forState: UIControlState.Normal)
+		self.restartButton?.hidden = true
+		self.restartButton?.addTarget(self, action: "startNewGame", forControlEvents: UIControlEvents.TouchUpInside)
+		self.view.addSubview(self.restartButton!)
+	}
+	
+	func startNewGame() -> Void {
+		// Remove old views
+		for view in self.stackedView {
+			view.removeFromSuperview()
+		}
+		
+		self.stackedView = []
+		
+		currentScore = 0
+		self.restartButton?.hidden = true
+		
+		self.scoreLabel?.hidden = false
+		self.scoreLabel?.text = String("Score: \(currentScore)")
+		// SetStartY with current Screen Info
+		nextStartY = CGRectGetMaxY(self.view.frame) - buildBlockHeight
+		
+		// Create Center Base One
+		let baseView = buildViewWithRect(CGRectMake((CGRectGetWidth(self.view.frame) - buildBlockWidth)/2.0, nextStartY, buildBlockWidth, buildBlockHeight))
+		nextStartY -= buildBlockHeight
+		self.stackedView.append(baseView)
+		
+		// Setup EffectiveRange
+		gameRange = EffectiveRange(startX: (CGRectGetWidth(self.view.frame) - buildBlockWidth)/2.0, effectiveWidth: buildBlockWidth, valid: true)
+		
+		// Bring up first block
+		createNewBlockFromLeft(true, width: buildBlockWidth)
 	}
 	
 	func tappedScreen(gestureRecognizer: UITapGestureRecognizer) {
@@ -84,7 +111,9 @@ class ViewController: UIViewController {
 			
 			if thisTurnResultRange.valid == false {
 				print("game over")
-				self.scoreLabel?.text = "Game Over!!!"
+				self.scoreLabel?.text = "Game Over!!! Your score is \(currentScore)"
+				
+				self.restartButton?.hidden = false
 				return
 			}
 			currentScore += 1
@@ -98,13 +127,14 @@ class ViewController: UIViewController {
 				// Demo first no animation
 				let keptView = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
 				keptView.backgroundColor = randomColor()
-				
+				self.stackedView.append(keptView)
 			} else {
 				// Drop Right Part
 				
 				// Demo first no animation
 				let keptView = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
 				keptView.backgroundColor = randomColor()
+				self.stackedView.append(keptView)
 			}
 			
 			
