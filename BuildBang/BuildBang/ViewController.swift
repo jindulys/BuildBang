@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 	let buildBlockHeight: CGFloat = 60
 	let buildBlockWidth: CGFloat = 180
 	
-	var gameLevel: NSTimeInterval = 2
+	var gameLevel: NSTimeInterval = 6
 	
 	let securityHeight: CGFloat = 260
 	
@@ -46,7 +46,8 @@ class ViewController: UIViewController {
 	// Bonus Metrics
 	let bonusWidth: CGFloat = 20.0
 	var straightPerfectTime: Int = 0
-	let bonusThreshold = 1
+	let bonusThreshold = 2
+    var continuePerfectMatch = false
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -138,14 +139,19 @@ class ViewController: UIViewController {
 			// TODO: test
 			
 			var perfectMatch = false
-			if abs(previousRange.effectiveWidth - self.gameRange.effectiveWidth) < 10.0 {
+            if abs(previousRange.effectiveWidth - self.gameRange.effectiveWidth) < 10.0 {
 				gameRange = previousRange
 				perfectMatch = true
-				
-				self.straightPerfectTime += 1
+                
+                if continuePerfectMatch {
+                    self.straightPerfectTime = bonusThreshold
+                } else {
+                    self.straightPerfectTime += 1
+                }
 				
 				if self.straightPerfectTime == bonusThreshold {
 					self.straightPerfectTime = 0
+                    continuePerfectMatch = true
 					gameRange.effectiveWidth += bonusWidth
 					
 					if gameRange.effectiveWidth > buildBlockWidth {
@@ -153,8 +159,9 @@ class ViewController: UIViewController {
 					}
 				}
 			} else {
-				self.straightPerfectTime = 0
-			}
+                self.straightPerfectTime = 0
+                self.continuePerfectMatch = false
+            }
 			
 			// Secondly, if game continue, we should use new gameRange truncate our current buildBlock to two parts.
 			if gameRange.startX > CGRectGetMinX(currentPresentationLayer.frame) {
