@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-BuildBang/Animo.framework"
+  install_framework "Pods-BuildBang/RandomColorSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-BuildBang/Animo.framework"
+  install_framework "Pods-BuildBang/RandomColorSwift.framework"
 fi

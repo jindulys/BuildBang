@@ -7,73 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		087C1BBAB211768B60E0874AA84E5034 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F256E244EEE6D17CDE9756D7A9707EF3 /* Transition.swift */; };
-		0B2062DB2A01C6448D41FDDA7177A773 /* TimingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21EE6DEA6CCC099DFB28FB76D554579 /* TimingMode.swift */; };
-		1256D48D3BF77AB2DE2451D10F8394FA /* Pods-BuildBang-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B6044C07A67E1FC1F190F8B2A1494 /* Pods-BuildBang-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0855965C169C262691A47209351D2271 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6B4771EE0171E448A920CEAB068C1 /* ColorDefinition.swift */; };
+		087C1BBAB211768B60E0874AA84E5034 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B068F0892988552E059E2661CCD621 /* Transition.swift */; };
+		0B2062DB2A01C6448D41FDDA7177A773 /* TimingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42650FC736D514850EEFB7AED4D22ED /* TimingMode.swift */; };
 		1C73E3E0077664869A77251C25AA146F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F890DA3710B15D7A4D42D4548216D5FD /* UIKit.framework */; };
-		1FC025A608CA8C39173C990BECC66939 /* Animo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD2BDE96C94AD33116022D35349D77A /* Animo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2121FED53562AEBEFE6669E924E16876 /* CALayer+Animo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27EDB59A8B475A60B0B5CF315DDD564 /* CALayer+Animo.swift */; };
+		1FC025A608CA8C39173C990BECC66939 /* Animo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4393BB3F1923FE7F9102DE8205F096F2 /* Animo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2121FED53562AEBEFE6669E924E16876 /* CALayer+Animo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E91CBF16BA21B6051A58263B812388 /* CALayer+Animo.swift */; };
 		2882BED23923D30C1E967DDBB4A628F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B2AB39DE205DDFD3AFFF05F2346F4B /* QuartzCore.framework */; };
-		2FBCD5B403C38212F790EF9A05D48E4A /* Animo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCC10067613C141B267465FA0061F4D /* Animo-dummy.m */; };
-		303300444589EFE6CA97A385267357D4 /* CAAnimation+AnimoInternals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63169C87B87484780616F316FE670521 /* CAAnimation+AnimoInternals.swift */; };
-		3DB2A47D0E8F53F29CD957AB89304FCA /* Animo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875AF171FB1A58DFF6209D31179572E9 /* Animo.swift */; };
-		4EC36594D0260139DC75BF88262BD3B1 /* KeyframeValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D25E584099CB4372B40E12E4F2438 /* KeyframeValueConvertible.swift */; };
+		2FBCD5B403C38212F790EF9A05D48E4A /* Animo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D7BB40C28B5C6DEB4DB5BC8BD5B783 /* Animo-dummy.m */; };
+		303300444589EFE6CA97A385267357D4 /* CAAnimation+AnimoInternals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E067D78D4AB3EF78633FCA50AF2BA0 /* CAAnimation+AnimoInternals.swift */; };
+		3DB2A47D0E8F53F29CD957AB89304FCA /* Animo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE40A283A7023932ED89002BBD3BB6F /* Animo.swift */; };
+		4EC36594D0260139DC75BF88262BD3B1 /* KeyframeValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0371AAB6FC455E3CB25511E4A23FD /* KeyframeValueConvertible.swift */; };
+		60FF21A48E610CE1A9BC1C16D3BDAB99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8745EADFD8EEA5205F580A3D05E933BE /* Foundation.framework */; };
+		6379B7027A0CD8850AC2F96E7636E92F /* Pods-BuildBang-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C0D570AD2D4F3170D82CE9EE375DDA /* Pods-BuildBang-dummy.m */; };
 		692DB299E17D21345EA73062AEDAAB55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8745EADFD8EEA5205F580A3D05E933BE /* Foundation.framework */; };
-		74072354DAFF5B86451FB3854F8AE2AB /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E93628984B6064C1D7B2F06712B3E /* Options.swift */; };
-		7C4D81D4A5E7D58F20374F3D76D31718 /* Transition+AnimoInternals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29478CDEEB8D5AD19A87E260503CD15B /* Transition+AnimoInternals.swift */; };
-		81ED57B1DBCF15C5549D8A277B8B5015 /* Animo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEAD22D6247CD1B6B82AA3A59971329 /* Animo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83D27683601D180924B8B4815FD15166 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8745EADFD8EEA5205F580A3D05E933BE /* Foundation.framework */; };
+		74072354DAFF5B86451FB3854F8AE2AB /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77321CDCFADF0B052A195553472DB88 /* Options.swift */; };
+		7C4D81D4A5E7D58F20374F3D76D31718 /* Transition+AnimoInternals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9362C81DEDF75269C8D60B28A68B6814 /* Transition+AnimoInternals.swift */; };
+		81ED57B1DBCF15C5549D8A277B8B5015 /* Animo.h in Headers */ = {isa = PBXBuildFile; fileRef = FF27F77DD6F88B7869D25170F84C329C /* Animo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8890BE4F1754D44C61892E3DBC60607D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96841B8FE996C12075C1533F10E44399 /* CoreGraphics.framework */; };
-		E1E72FB53A952B8F9D1E8B58707AC68A /* DurationSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499154DAEC426D0319681E576453B199 /* DurationSpan.swift */; };
-		EE4369E9211C6A95D2353228A0FB81A7 /* LayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCD1FA3BE7AB35A679968CA1C1F171 /* LayerAnimation.swift */; };
-		F06D8E3FCD33A914BA52B129B5043917 /* Pods-BuildBang-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C0D570AD2D4F3170D82CE9EE375DDA /* Pods-BuildBang-dummy.m */; };
+		89A09B838783281F19BC3418DE4C2B44 /* RandomColorSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7456B452D62E28E5F672E0BC61C9B897 /* RandomColorSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A889EB9F06E161AA5B43EB9674FCD849 /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695451A6A6741470885D722DAF1501B /* Luminosity.swift */; };
+		BD9FDDBC30B6397D740D713BEA75B848 /* RandomColorSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA83AC5EBEBF50F66F1C12A8AF346E5 /* RandomColorSwift-dummy.m */; };
+		DD477539C61D4F9A249CCB9B4A25ECF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8745EADFD8EEA5205F580A3D05E933BE /* Foundation.framework */; };
+		E1E72FB53A952B8F9D1E8B58707AC68A /* DurationSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48888A68FD143E8C2086F05B70BDC76 /* DurationSpan.swift */; };
+		E3286DC459FCDA4269A032812240D3E8 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65244242B010EA89F9F317FA166ED825 /* Hue.swift */; };
+		E65CB83A0CA715C529CF048528E6EFAE /* Pods-BuildBang-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B6044C07A67E1FC1F190F8B2A1494 /* Pods-BuildBang-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9D42AE18AB283274A27902E0CCE0296 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E06DABD49A02779925AD478BE10C4E /* RandomColor.swift */; };
+		EE4369E9211C6A95D2353228A0FB81A7 /* LayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0C9BA7B01B0812D31D6B341DE22B4 /* LayerAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		32575CFC837F734157E795C693107CE4 /* PBXContainerItemProxy */ = {
+		46D3B8DFAC4237226D909B8A02960D67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 06E091B7E0CAD40E2AC4B849013EFDAF;
 			remoteInfo = Animo;
 		};
+		B329420E8ECDB835BE52B642DDF62DEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C401799CBA418B9F5EF6AA0FF532F560;
+			remoteInfo = RandomColorSwift;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06D511D93A2CC4DCBD9C41662B6F3EF9 /* Animo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Animo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02C6B4771EE0171E448A920CEAB068C1 /* ColorDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = RandomColor/ColorDefinition.swift; sourceTree = "<group>"; };
+		12D7BB40C28B5C6DEB4DB5BC8BD5B783 /* Animo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Animo-dummy.m"; sourceTree = "<group>"; };
 		19C0D570AD2D4F3170D82CE9EE375DDA /* Pods-BuildBang-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BuildBang-dummy.m"; sourceTree = "<group>"; };
-		28BCD1FA3BE7AB35A679968CA1C1F171 /* LayerAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerAnimation.swift; path = Animo/LayerAnimation.swift; sourceTree = "<group>"; };
-		29478CDEEB8D5AD19A87E260503CD15B /* Transition+AnimoInternals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Transition+AnimoInternals.swift"; path = "Animo/Internal/Transition+AnimoInternals.swift"; sourceTree = "<group>"; };
+		2724F5F454FA9E9938372198D4049C96 /* RandomColorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RandomColorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28E91CBF16BA21B6051A58263B812388 /* CALayer+Animo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Animo.swift"; path = "Animo/CALayer+Animo.swift"; sourceTree = "<group>"; };
+		2AB0371AAB6FC455E3CB25511E4A23FD /* KeyframeValueConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeValueConvertible.swift; path = Animo/KeyframeValueConvertible.swift; sourceTree = "<group>"; };
 		366B6044C07A67E1FC1F190F8B2A1494 /* Pods-BuildBang-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BuildBang-umbrella.h"; sourceTree = "<group>"; };
-		499154DAEC426D0319681E576453B199 /* DurationSpan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DurationSpan.swift; path = Animo/DurationSpan.swift; sourceTree = "<group>"; };
+		4393BB3F1923FE7F9102DE8205F096F2 /* Animo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Animo-umbrella.h"; sourceTree = "<group>"; };
+		4695451A6A6741470885D722DAF1501B /* Luminosity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = RandomColor/Luminosity.swift; sourceTree = "<group>"; };
 		4CA3D6FB238D2EC87FA129DA87C671AD /* Pods-BuildBang.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BuildBang.modulemap"; sourceTree = "<group>"; };
-		4FEAD22D6247CD1B6B82AA3A59971329 /* Animo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Animo.h; path = Animo/Animo.h; sourceTree = "<group>"; };
 		55B2AB39DE205DDFD3AFFF05F2346F4B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		5A1F3396353C85C357D3E663098BD146 /* RandomColorSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RandomColorSwift.xcconfig; sourceTree = "<group>"; };
 		5EAD124C50620EFB3DFF4E612778E29D /* Pods-BuildBang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BuildBang.release.xcconfig"; sourceTree = "<group>"; };
-		63169C87B87484780616F316FE670521 /* CAAnimation+AnimoInternals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAAnimation+AnimoInternals.swift"; path = "Animo/Internal/CAAnimation+AnimoInternals.swift"; sourceTree = "<group>"; };
-		63AF30D65F97D05E2CC998A096ADFE61 /* Animo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Animo.modulemap; sourceTree = "<group>"; };
+		65244242B010EA89F9F317FA166ED825 /* Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = RandomColor/Hue.swift; sourceTree = "<group>"; };
 		66BBF2023B008B8C3DC71D3022D60AFF /* Pods-BuildBang-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BuildBang-frameworks.sh"; sourceTree = "<group>"; };
+		7456B452D62E28E5F672E0BC61C9B897 /* RandomColorSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-umbrella.h"; sourceTree = "<group>"; };
+		7DA83AC5EBEBF50F66F1C12A8AF346E5 /* RandomColorSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RandomColorSwift-dummy.m"; sourceTree = "<group>"; };
 		86CA8DCD08BD7039D915F13357F52B2E /* Pods-BuildBang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BuildBang.debug.xcconfig"; sourceTree = "<group>"; };
 		8745EADFD8EEA5205F580A3D05E933BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		875AF171FB1A58DFF6209D31179572E9 /* Animo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animo.swift; path = Animo/Animo.swift; sourceTree = "<group>"; };
+		8A65FC304074219956C8B3CDA736927A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E80397E58732D3A858454B219A2AC93 /* Animo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Animo-prefix.pch"; sourceTree = "<group>"; };
+		8FC0C9BA7B01B0812D31D6B341DE22B4 /* LayerAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerAnimation.swift; path = Animo/LayerAnimation.swift; sourceTree = "<group>"; };
 		909B033646DBB6802F7F8891A399534D /* Pods-BuildBang-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BuildBang-resources.sh"; sourceTree = "<group>"; };
-		930E93628984B6064C1D7B2F06712B3E /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Options.swift; path = Animo/Options.swift; sourceTree = "<group>"; };
+		9362C81DEDF75269C8D60B28A68B6814 /* Transition+AnimoInternals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Transition+AnimoInternals.swift"; path = "Animo/Internal/Transition+AnimoInternals.swift"; sourceTree = "<group>"; };
+		95BC95E16B25DDFC8559777DAF1A2764 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96841B8FE996C12075C1533F10E44399 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		9CD2BDE96C94AD33116022D35349D77A /* Animo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Animo-umbrella.h"; sourceTree = "<group>"; };
-		B94D25E584099CB4372B40E12E4F2438 /* KeyframeValueConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeValueConvertible.swift; path = Animo/KeyframeValueConvertible.swift; sourceTree = "<group>"; };
+		A42650FC736D514850EEFB7AED4D22ED /* TimingMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimingMode.swift; path = Animo/TimingMode.swift; sourceTree = "<group>"; };
+		A4E067D78D4AB3EF78633FCA50AF2BA0 /* CAAnimation+AnimoInternals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAAnimation+AnimoInternals.swift"; path = "Animo/Internal/CAAnimation+AnimoInternals.swift"; sourceTree = "<group>"; };
+		A824D4AD5A1C6B9F2D6B8B4767788934 /* RandomColorSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RandomColorSwift-prefix.pch"; sourceTree = "<group>"; };
+		B48888A68FD143E8C2086F05B70BDC76 /* DurationSpan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DurationSpan.swift; path = Animo/DurationSpan.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C27EDB59A8B475A60B0B5CF315DDD564 /* CALayer+Animo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Animo.swift"; path = "Animo/CALayer+Animo.swift"; sourceTree = "<group>"; };
-		C969B0E075D98BD2593D4D24A88A39AB /* Animo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Animo.xcconfig; sourceTree = "<group>"; };
-		D21EE6DEA6CCC099DFB28FB76D554579 /* TimingMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimingMode.swift; path = Animo/TimingMode.swift; sourceTree = "<group>"; };
+		C7E06DABD49A02779925AD478BE10C4E /* RandomColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = RandomColor/RandomColor.swift; sourceTree = "<group>"; };
+		C924D28BC6F84CC3EA1C351C8F399545 /* RandomColorSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = RandomColorSwift.modulemap; sourceTree = "<group>"; };
+		CBE40A283A7023932ED89002BBD3BB6F /* Animo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animo.swift; path = Animo/Animo.swift; sourceTree = "<group>"; };
+		CD1E0C675A17875DA3C4CA9E58AAC90A /* Animo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Animo.modulemap; sourceTree = "<group>"; };
+		D1B068F0892988552E059E2661CCD621 /* Transition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transition.swift; path = Animo/Transition.swift; sourceTree = "<group>"; };
+		D4FE2925E93BEA9FE80FFB330FE16AE7 /* Pods_BuildBang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildBang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77321CDCFADF0B052A195553472DB88 /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Options.swift; path = Animo/Options.swift; sourceTree = "<group>"; };
 		DA058912D8A23099F2BBDFF2F1DE499F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC1CF9B5DE311F5B4C448957A55EBC5C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFCC10067613C141B267465FA0061F4D /* Animo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Animo-dummy.m"; sourceTree = "<group>"; };
-		E7CB574ADBD53630B29457B454BB847B /* Pods_BuildBang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildBang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7337BCA7EDD31874F3FF95A8A35944E /* Animo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Animo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8F84BE8AEAFCEA2F9C4C11CFD2EE260 /* Animo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Animo.xcconfig; sourceTree = "<group>"; };
 		EAEBF65BE30F958383FAD1E1D852CFC4 /* Pods-BuildBang-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BuildBang-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EB775F73421DFBC79E9413B018D527E4 /* Pods-BuildBang-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BuildBang-acknowledgements.plist"; sourceTree = "<group>"; };
-		F256E244EEE6D17CDE9756D7A9707EF3 /* Transition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transition.swift; path = Animo/Transition.swift; sourceTree = "<group>"; };
-		F772DFD001EAB496F061F645A8CB0B32 /* Animo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Animo-prefix.pch"; sourceTree = "<group>"; };
 		F890DA3710B15D7A4D42D4548216D5FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FF27F77DD6F88B7869D25170F84C329C /* Animo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Animo.h; path = Animo/Animo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,31 +113,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2902957DCA6999FFE01E39394086E62 /* Frameworks */ = {
+		E0ACA27B8DFE0673DB7A1EDE5A1BAC2D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83D27683601D180924B8B4815FD15166 /* Foundation.framework in Frameworks */,
+				DD477539C61D4F9A249CCB9B4A25ECF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC7A37D376D8485F15AF9C64B7F12E59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60FF21A48E610CE1A9BC1C16D3BDAB99 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01565653D5F8160D9C772C189B9F5136 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				63AF30D65F97D05E2CC998A096ADFE61 /* Animo.modulemap */,
-				C969B0E075D98BD2593D4D24A88A39AB /* Animo.xcconfig */,
-				DFCC10067613C141B267465FA0061F4D /* Animo-dummy.m */,
-				F772DFD001EAB496F061F645A8CB0B32 /* Animo-prefix.pch */,
-				9CD2BDE96C94AD33116022D35349D77A /* Animo-umbrella.h */,
-				DC1CF9B5DE311F5B4C448957A55EBC5C /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Animo";
-			sourceTree = "<group>";
-		};
 		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,12 +140,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1E61CD59DA450FF2A42A7ED2D21D31A0 /* Pods */ = {
+		1F70784A3EE740206CF2371301271613 /* RandomColorSwift */ = {
 			isa = PBXGroup;
 			children = (
-				703F74E0582715EE5079713E3674389C /* Animo */,
+				02C6B4771EE0171E448A920CEAB068C1 /* ColorDefinition.swift */,
+				65244242B010EA89F9F317FA166ED825 /* Hue.swift */,
+				4695451A6A6741470885D722DAF1501B /* Luminosity.swift */,
+				C7E06DABD49A02779925AD478BE10C4E /* RandomColor.swift */,
+				79DB0DDFEFAEAD8799E485E27ECD7161 /* Support Files */,
 			);
-			name = Pods;
+			path = RandomColorSwift;
 			sourceTree = "<group>";
 		};
 		289495B8A63E09B10D413B775DD989F7 /* iOS */ = {
@@ -140,13 +163,18 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		47ACCD3E7B2FA9032090BE28410548EC /* Products */ = {
+		5A0B651E8AF5390844D45A47287B8204 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				06D511D93A2CC4DCBD9C41662B6F3EF9 /* Animo.framework */,
-				E7CB574ADBD53630B29457B454BB847B /* Pods_BuildBang.framework */,
+				CD1E0C675A17875DA3C4CA9E58AAC90A /* Animo.modulemap */,
+				E8F84BE8AEAFCEA2F9C4C11CFD2EE260 /* Animo.xcconfig */,
+				12D7BB40C28B5C6DEB4DB5BC8BD5B783 /* Animo-dummy.m */,
+				8E80397E58732D3A858454B219A2AC93 /* Animo-prefix.pch */,
+				4393BB3F1923FE7F9102DE8205F096F2 /* Animo-umbrella.h */,
+				95BC95E16B25DDFC8559777DAF1A2764 /* Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/Animo";
 			sourceTree = "<group>";
 		};
 		62B84A650D81CE97917C1DF4F6A97EC9 /* Targets Support Files */ = {
@@ -157,23 +185,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		703F74E0582715EE5079713E3674389C /* Animo */ = {
+		79DB0DDFEFAEAD8799E485E27ECD7161 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4FEAD22D6247CD1B6B82AA3A59971329 /* Animo.h */,
-				875AF171FB1A58DFF6209D31179572E9 /* Animo.swift */,
-				63169C87B87484780616F316FE670521 /* CAAnimation+AnimoInternals.swift */,
-				C27EDB59A8B475A60B0B5CF315DDD564 /* CALayer+Animo.swift */,
-				499154DAEC426D0319681E576453B199 /* DurationSpan.swift */,
-				B94D25E584099CB4372B40E12E4F2438 /* KeyframeValueConvertible.swift */,
-				28BCD1FA3BE7AB35A679968CA1C1F171 /* LayerAnimation.swift */,
-				930E93628984B6064C1D7B2F06712B3E /* Options.swift */,
-				D21EE6DEA6CCC099DFB28FB76D554579 /* TimingMode.swift */,
-				F256E244EEE6D17CDE9756D7A9707EF3 /* Transition.swift */,
-				29478CDEEB8D5AD19A87E260503CD15B /* Transition+AnimoInternals.swift */,
-				01565653D5F8160D9C772C189B9F5136 /* Support Files */,
+				8A65FC304074219956C8B3CDA736927A /* Info.plist */,
+				C924D28BC6F84CC3EA1C351C8F399545 /* RandomColorSwift.modulemap */,
+				5A1F3396353C85C357D3E663098BD146 /* RandomColorSwift.xcconfig */,
+				7DA83AC5EBEBF50F66F1C12A8AF346E5 /* RandomColorSwift-dummy.m */,
+				A824D4AD5A1C6B9F2D6B8B4767788934 /* RandomColorSwift-prefix.pch */,
+				7456B452D62E28E5F672E0BC61C9B897 /* RandomColorSwift-umbrella.h */,
 			);
-			path = Animo;
+			name = "Support Files";
+			path = "../Target Support Files/RandomColorSwift";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -181,10 +204,20 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				1E61CD59DA450FF2A42A7ED2D21D31A0 /* Pods */,
-				47ACCD3E7B2FA9032090BE28410548EC /* Products */,
+				F477056F5545854EC550F6F1CCA71381 /* Pods */,
+				96798CC9F5CDD76508368BD54FC71D3F /* Products */,
 				62B84A650D81CE97917C1DF4F6A97EC9 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		96798CC9F5CDD76508368BD54FC71D3F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7337BCA7EDD31874F3FF95A8A35944E /* Animo.framework */,
+				D4FE2925E93BEA9FE80FFB330FE16AE7 /* Pods_BuildBang.framework */,
+				2724F5F454FA9E9938372198D4049C96 /* RandomColorSwift.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CB1DA9CB571355F1C50F2D53D3EE8B73 /* Pods-BuildBang */ = {
@@ -205,9 +238,45 @@
 			path = "Target Support Files/Pods-BuildBang";
 			sourceTree = "<group>";
 		};
+		F477056F5545854EC550F6F1CCA71381 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCE85324EA537B3BD6AB9C1C84361586 /* Animo */,
+				1F70784A3EE740206CF2371301271613 /* RandomColorSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FCE85324EA537B3BD6AB9C1C84361586 /* Animo */ = {
+			isa = PBXGroup;
+			children = (
+				FF27F77DD6F88B7869D25170F84C329C /* Animo.h */,
+				CBE40A283A7023932ED89002BBD3BB6F /* Animo.swift */,
+				A4E067D78D4AB3EF78633FCA50AF2BA0 /* CAAnimation+AnimoInternals.swift */,
+				28E91CBF16BA21B6051A58263B812388 /* CALayer+Animo.swift */,
+				B48888A68FD143E8C2086F05B70BDC76 /* DurationSpan.swift */,
+				2AB0371AAB6FC455E3CB25511E4A23FD /* KeyframeValueConvertible.swift */,
+				8FC0C9BA7B01B0812D31D6B341DE22B4 /* LayerAnimation.swift */,
+				D77321CDCFADF0B052A195553472DB88 /* Options.swift */,
+				A42650FC736D514850EEFB7AED4D22ED /* TimingMode.swift */,
+				D1B068F0892988552E059E2661CCD621 /* Transition.swift */,
+				9362C81DEDF75269C8D60B28A68B6814 /* Transition+AnimoInternals.swift */,
+				5A0B651E8AF5390844D45A47287B8204 /* Support Files */,
+			);
+			path = Animo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2D252BD6B6CE9EF63F46B70CD0E399CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89A09B838783281F19BC3418DE4C2B44 /* RandomColorSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59ECFEE4CEBF4F1350519143F126FA59 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,11 +286,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		834486D8D7FAF657925D1DB4D975DD6A /* Headers */ = {
+		D97AB49D58347ECE08FFFE3B6017C208 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1256D48D3BF77AB2DE2451D10F8394FA /* Pods-BuildBang-umbrella.h in Headers */,
+				E65CB83A0CA715C529CF048528E6EFAE /* Pods-BuildBang-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,25 +311,43 @@
 			);
 			name = Animo;
 			productName = Animo;
-			productReference = 06D511D93A2CC4DCBD9C41662B6F3EF9 /* Animo.framework */;
+			productReference = E7337BCA7EDD31874F3FF95A8A35944E /* Animo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		297ECDDEA332E7C1EF9DDA8538F83F26 /* Pods-BuildBang */ = {
+		53FC5EB155176FFC83876DBF098D42FE /* Pods-BuildBang */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AAE6C4099D504C6CEE1C3EE781E749BE /* Build configuration list for PBXNativeTarget "Pods-BuildBang" */;
+			buildConfigurationList = 0C0FA704FF6DA5CF5FF8EE89DF3F6C5A /* Build configuration list for PBXNativeTarget "Pods-BuildBang" */;
 			buildPhases = (
-				EC6FBA28EF6C741CC68FC2DBF504D647 /* Sources */,
-				D2902957DCA6999FFE01E39394086E62 /* Frameworks */,
-				834486D8D7FAF657925D1DB4D975DD6A /* Headers */,
+				F5387B07E1D9E21F702C782B5CBFEFA8 /* Sources */,
+				FC7A37D376D8485F15AF9C64B7F12E59 /* Frameworks */,
+				D97AB49D58347ECE08FFFE3B6017C208 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				15BBB84377FDA7F3331B8DDD62AEECDD /* PBXTargetDependency */,
+				6794514878881413B9E689C8F5931764 /* PBXTargetDependency */,
+				CFE2C3FD4BA49BB74D62D2A59D764181 /* PBXTargetDependency */,
 			);
 			name = "Pods-BuildBang";
 			productName = "Pods-BuildBang";
-			productReference = E7CB574ADBD53630B29457B454BB847B /* Pods_BuildBang.framework */;
+			productReference = D4FE2925E93BEA9FE80FFB330FE16AE7 /* Pods_BuildBang.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C401799CBA418B9F5EF6AA0FF532F560 /* RandomColorSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 498EED5C86D1EB3920D948B907AE308F /* Build configuration list for PBXNativeTarget "RandomColorSwift" */;
+			buildPhases = (
+				9B340C3470E29C4B5A03BFF7C8B5FCEE /* Sources */,
+				E0ACA27B8DFE0673DB7A1EDE5A1BAC2D /* Frameworks */,
+				2D252BD6B6CE9EF63F46B70CD0E399CB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RandomColorSwift;
+			productName = RandomColorSwift;
+			productReference = 2724F5F454FA9E9938372198D4049C96 /* RandomColorSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -280,22 +367,35 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 47ACCD3E7B2FA9032090BE28410548EC /* Products */;
+			productRefGroup = 96798CC9F5CDD76508368BD54FC71D3F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				06E091B7E0CAD40E2AC4B849013EFDAF /* Animo */,
-				297ECDDEA332E7C1EF9DDA8538F83F26 /* Pods-BuildBang */,
+				53FC5EB155176FFC83876DBF098D42FE /* Pods-BuildBang */,
+				C401799CBA418B9F5EF6AA0FF532F560 /* RandomColorSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EC6FBA28EF6C741CC68FC2DBF504D647 /* Sources */ = {
+		9B340C3470E29C4B5A03BFF7C8B5FCEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F06D8E3FCD33A914BA52B129B5043917 /* Pods-BuildBang-dummy.m in Sources */,
+				0855965C169C262691A47209351D2271 /* ColorDefinition.swift in Sources */,
+				E3286DC459FCDA4269A032812240D3E8 /* Hue.swift in Sources */,
+				A889EB9F06E161AA5B43EB9674FCD849 /* Luminosity.swift in Sources */,
+				E9D42AE18AB283274A27902E0CCE0296 /* RandomColor.swift in Sources */,
+				BD9FDDBC30B6397D740D713BEA75B848 /* RandomColorSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5387B07E1D9E21F702C782B5CBFEFA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6379B7027A0CD8850AC2F96E7636E92F /* Pods-BuildBang-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,18 +420,121 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		15BBB84377FDA7F3331B8DDD62AEECDD /* PBXTargetDependency */ = {
+		6794514878881413B9E689C8F5931764 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Animo;
 			target = 06E091B7E0CAD40E2AC4B849013EFDAF /* Animo */;
-			targetProxy = 32575CFC837F734157E795C693107CE4 /* PBXContainerItemProxy */;
+			targetProxy = 46D3B8DFAC4237226D909B8A02960D67 /* PBXContainerItemProxy */;
+		};
+		CFE2C3FD4BA49BB74D62D2A59D764181 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RandomColorSwift;
+			target = C401799CBA418B9F5EF6AA0FF532F560 /* RandomColorSwift */;
+			targetProxy = B329420E8ECDB835BE52B642DDF62DEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0716A1CBFCAA66424CC293B457E9F808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1F3396353C85C357D3E663098BD146 /* RandomColorSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RandomColorSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		176399340111130D08A0C1D7AE7B5D1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EAD124C50620EFB3DFF4E612778E29D /* Pods-BuildBang.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BuildBang/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BuildBang/Pods-BuildBang.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BuildBang;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		394E5FE20894C57734567FE57F382EBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86CA8DCD08BD7039D915F13357F52B2E /* Pods-BuildBang.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BuildBang/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BuildBang/Pods-BuildBang.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BuildBang;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		51EBDC39FA38C5C1E202C5A84D5AC1F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C969B0E075D98BD2593D4D24A88A39AB /* Animo.xcconfig */;
+			baseConfigurationReference = E8F84BE8AEAFCEA2F9C4C11CFD2EE260 /* Animo.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -396,76 +599,9 @@
 			};
 			name = Release;
 		};
-		911B0D3A4F332B8A0192B20BB3F230DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EAD124C50620EFB3DFF4E612778E29D /* Pods-BuildBang.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BuildBang/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BuildBang/Pods-BuildBang.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_BuildBang;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C26123C902DB6E431DE0EA762C89947F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86CA8DCD08BD7039D915F13357F52B2E /* Pods-BuildBang.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BuildBang/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BuildBang/Pods-BuildBang.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_BuildBang;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		DA4D5817D058DCB2D5E598B48DCE9A84 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C969B0E075D98BD2593D4D24A88A39AB /* Animo.xcconfig */;
+			baseConfigurationReference = E8F84BE8AEAFCEA2F9C4C11CFD2EE260 /* Animo.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -533,9 +669,47 @@
 			};
 			name = Debug;
 		};
+		E9D5F803390A326C1C98014CB977291E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1F3396353C85C357D3E663098BD146 /* RandomColorSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RandomColorSwift/RandomColorSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RandomColorSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RandomColorSwift/RandomColorSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RandomColorSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C0FA704FF6DA5CF5FF8EE89DF3F6C5A /* Build configuration list for PBXNativeTarget "Pods-BuildBang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				394E5FE20894C57734567FE57F382EBB /* Debug */,
+				176399340111130D08A0C1D7AE7B5D1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -545,11 +719,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AAE6C4099D504C6CEE1C3EE781E749BE /* Build configuration list for PBXNativeTarget "Pods-BuildBang" */ = {
+		498EED5C86D1EB3920D948B907AE308F /* Build configuration list for PBXNativeTarget "RandomColorSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C26123C902DB6E431DE0EA762C89947F /* Debug */,
-				911B0D3A4F332B8A0192B20BB3F230DD /* Release */,
+				0716A1CBFCAA66424CC293B457E9F808 /* Debug */,
+				E9D5F803390A326C1C98014CB977291E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,12 +14,13 @@ class ViewController: UIViewController {
 	struct EffectiveRange {
 		var startX: CGFloat
 		var effectiveWidth: CGFloat
+		var valid: Bool
 	}
 	
 	let buildBlockHeight: CGFloat = 20
 	let buildBlockWidth: CGFloat = 180
 	
-	var gameLevel: NSTimeInterval = 2
+	var gameLevel: NSTimeInterval = 6
 	
 	var nextStartY: CGFloat = 0.0
 	
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
 	
 	var currentBuldingBlock: UIView?
 	
-	var gameRange: EffectiveRange = EffectiveRange(startX: 0, effectiveWidth: 0.0)
+	var gameRange: EffectiveRange = EffectiveRange(startX: 0, effectiveWidth: 0.0, valid: true)
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -41,12 +42,12 @@ class ViewController: UIViewController {
 		nextStartY -= buildBlockHeight
 		
 		// Setup EffectiveRange
-		gameRange = EffectiveRange(startX: (CGRectGetWidth(self.view.frame) - buildBlockWidth)/2.0, effectiveWidth: buildBlockWidth)
+		gameRange = EffectiveRange(startX: (CGRectGetWidth(self.view.frame) - buildBlockWidth)/2.0, effectiveWidth: buildBlockWidth, valid: true)
 		
 		
 		// Bring up first block
 		
-		createNewBlockFromLeft(true)
+		createNewBlockFromLeft(true, width: buildBlockWidth)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -63,20 +64,39 @@ class ViewController: UIViewController {
 	func tappedScreen(gestureRecognizer: UITapGestureRecognizer) {
 		if let buildBlock = currentBuldingBlock, currentPresentationLayer = buildBlock.layer.presentationLayer() as? CALayer{
 			buildBlock.layer.removeAllAnimations()
+			buildBlock.removeFromSuperview()
 			
 			print("Current one frame is x:\(currentPresentationLayer.frame.origin.x) y: \(currentPresentationLayer.frame.origin.y)")
 			
 			// First, we judge if there has some intersection
 			
+			let thisTurnResultRange = retreiveNewGameRangeWithFrame(currentPresentationLayer.frame)
+			
+			
+			if thisTurnResultRange.valid == false {
+				print("game over")
+				return
+			} else {
+				gameRange = thisTurnResultRange
+			}
+			
+			// Secondly, if game continue, we should use new gameRange truncate our current buildBlock to two parts.
+			if gameRange.startX > CGRectGetMinX(currentPresentationLayer.frame) {
+				// Drop Left Part
+				
+				// Demo first no animation
+				let _ = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
+				
+			} else {
+				// Drop Right Part
+				
+				// Demo first no animation
+				let _ = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
+			}
 			
 			
 			
-			let newView = buildViewWithRect(currentPresentationLayer.frame)
-			buildBlock.removeFromSuperview()
-			
-			currentBuldingBlock = newView
-			
-			createNewBlockFromLeft(true)
+			createNewBlockFromLeft(true, width: gameRange.effectiveWidth)
 			
 			
 			// Settle current building Block
@@ -85,6 +105,29 @@ class ViewController: UIViewController {
 			
 			// If not bringup next block
 		}
+	}
+	
+	func retreiveNewGameRangeWithFrame(frame: CGRect) -> EffectiveRange {
+		
+		if CGRectGetMaxX(frame) < gameRange.startX || CGRectGetMinX(frame) > gameRange.startX + gameRange.effectiveWidth {
+			return EffectiveRange(startX: 0.0, effectiveWidth: 0.0, valid: false)
+		}
+		
+		var newStartX: CGFloat = 0.0
+		if CGRectGetMinX(frame) < gameRange.startX {
+			newStartX = gameRange.startX
+		} else {
+			newStartX = CGRectGetMinX(frame)
+		}
+		
+		var newWidth: CGFloat = 0.0
+		if CGRectGetMaxX(frame) <  gameRange.startX + gameRange.effectiveWidth {
+			newWidth = CGRectGetMaxX(frame) - gameRange.startX
+		} else {
+			newWidth = gameRange.startX + gameRange.effectiveWidth - CGRectGetMinX(frame)
+		}
+		
+		return EffectiveRange(startX: newStartX, effectiveWidth: newWidth, valid: true)
 	}
 
 	// Build a view with rect and add it to left or right side of the screen
@@ -96,18 +139,18 @@ class ViewController: UIViewController {
 		return view
 	}
 	
-	func createNewBlockFromLeft(left: Bool) {
+	func createNewBlockFromLeft(left: Bool, width: CGFloat) {
 		let screenWidth = CGRectGetWidth(self.view.frame)
 		
 		var blockX: CGFloat = 0.0
 		
-		let moveDistance = screenWidth - buildBlockWidth
+		let moveDistance = screenWidth - width
 		
 		if !left {
-			blockX = screenWidth - buildBlockWidth
+			blockX = screenWidth - width
 		}
 		
-		currentBuldingBlock = buildViewWithRect(CGRectMake(blockX, nextStartY, buildBlockWidth, buildBlockHeight))
+		currentBuldingBlock = buildViewWithRect(CGRectMake(blockX, nextStartY, width, buildBlockHeight))
 		
 		let leftToRightAnimo = Animo.group(
 			Animo.keyPath("backgroundColor", to: UIColor.blueColor(), duration: gameLevel),

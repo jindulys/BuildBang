@@ -1,12 +1,15 @@
 PODS:
   - Animo (1.2.0)
+  - RandomColorSwift (0.1.0)
 
 DEPENDENCIES:
   - Animo
+  - RandomColorSwift
 
 SPEC CHECKSUMS:
   Animo: 65efda78ae7fc2af40eda78852b59e7545815dde
+  RandomColorSwift: b2e95d6d3670def6d2f907ec7b7041138b268ac9
 
-PODFILE CHECKSUM: 55c00820614edd400d4af4b9db5922d916e46130
+PODFILE CHECKSUM: 2f18f47e972617cf21108f0d5eadf87467532a7a
 
 COCOAPODS: 1.0.0.beta.2
