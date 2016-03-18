@@ -8,6 +8,7 @@
 
 import UIKit
 import Animo
+import RandomColorSwift
 
 class ViewController: UIViewController {
 	
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
 	var currentScore: Int = 0
 	
 	var currentBuldingBlock: UIView?
+	
+	var scoreLabel: UILabel?
 	
 	var gameRange: EffectiveRange = EffectiveRange(startX: 0, effectiveWidth: 0.0, valid: true)
 
@@ -59,6 +62,12 @@ class ViewController: UIViewController {
 	func setupViews() -> Void {
 		let tapGestrue = UITapGestureRecognizer(target: self, action: "tappedScreen:")
 		self.view.addGestureRecognizer(tapGestrue)
+		
+		self.scoreLabel = UILabel(frame: CGRectMake(160, 70, 160, 30))
+		self.scoreLabel?.textColor = UIColor.blackColor()
+		self.scoreLabel?.text = String("Score: \(currentScore)")
+		self.scoreLabel?.font = UIFont.systemFontOfSize(18.0)
+		self.view.addSubview(self.scoreLabel!)
 	}
 	
 	func tappedScreen(gestureRecognizer: UITapGestureRecognizer) {
@@ -75,23 +84,27 @@ class ViewController: UIViewController {
 			
 			if thisTurnResultRange.valid == false {
 				print("game over")
+				self.scoreLabel?.text = "Game Over!!!"
 				return
-			} else {
-				gameRange = thisTurnResultRange
 			}
+			currentScore += 1
+			self.scoreLabel?.text = String("Score: \(currentScore)")
+			gameRange = thisTurnResultRange
 			
 			// Secondly, if game continue, we should use new gameRange truncate our current buildBlock to two parts.
 			if gameRange.startX > CGRectGetMinX(currentPresentationLayer.frame) {
 				// Drop Left Part
 				
 				// Demo first no animation
-				let _ = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
+				let keptView = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
+				keptView.backgroundColor = randomColor()
 				
 			} else {
 				// Drop Right Part
 				
 				// Demo first no animation
-				let _ = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
+				let keptView = buildViewWithRect(CGRectMake(gameRange.startX, currentPresentationLayer.frame.origin.y, gameRange.effectiveWidth, buildBlockHeight))
+				keptView.backgroundColor = randomColor()
 			}
 			
 			
