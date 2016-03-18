@@ -19,9 +19,9 @@ class ViewController: UIViewController {
 	}
 	
 	let buildBlockHeight: CGFloat = 35
-	let buildBlockWidth: CGFloat = 280
+	let buildBlockWidth: CGFloat = 180
 	
-	var gameLevel: NSTimeInterval = 3
+	var gameLevel: NSTimeInterval = 1
 	
 	let securityHeight: CGFloat = 260
 	
@@ -46,12 +46,17 @@ class ViewController: UIViewController {
 	// Bonus Metrics
 	let bonusWidth: CGFloat = 20.0
 	var straightPerfectTime: Int = 0
-	let bonusThreshold = 2
+	let bonusThreshold = 5
     var continuePerfectMatch = false
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
+		
+		setupConstraints()
+		
+		self.view.setNeedsLayout()
+		self.view.layoutIfNeeded()
 		
 		startNewGame()
 	}
@@ -66,19 +71,30 @@ class ViewController: UIViewController {
 		let tapGestrue = UITapGestureRecognizer(target: self, action: "tappedScreen:")
 		self.view.addGestureRecognizer(tapGestrue)
 		
-		self.scoreLabel = UILabel(frame: CGRectMake(90, 70, 260, 30))
+		self.scoreLabel = UILabel(frame: CGRectZero)
+		self.scoreLabel?.translatesAutoresizingMaskIntoConstraints = false
 		self.scoreLabel?.textColor = UIColor.blackColor()
 		self.scoreLabel?.text = String("Score: \(currentScore)")
 		self.scoreLabel?.font = UIFont.systemFontOfSize(18.0)
 		self.view.addSubview(self.scoreLabel!)
 		
-		self.restartButton = UIButton(frame: CGRectMake(90, 170, 260, 30))
+		self.restartButton = UIButton(frame: CGRectZero)
+		self.restartButton?.translatesAutoresizingMaskIntoConstraints = false
 		self.restartButton?.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
 		self.restartButton?.titleLabel?.font = UIFont.systemFontOfSize(18.0)
 		self.restartButton?.setTitle("Try Once More @_@ 😈😈😈", forState: UIControlState.Normal)
 		self.restartButton?.hidden = true
 		self.restartButton?.addTarget(self, action: "startNewGame", forControlEvents: UIControlEvents.TouchUpInside)
 		self.view.addSubview(self.restartButton!)
+	}
+	
+	func setupConstraints() -> Void {
+		let constraint1 = self.scoreLabel?.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor)
+		let constraint2 = self.restartButton?.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor)
+		
+		let constraint3 = self.scoreLabel?.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 20.0)
+		let constraint4 = self.restartButton?.topAnchor.constraintEqualToAnchor(self.scoreLabel?.bottomAnchor, constant: 20.0)
+		NSLayoutConstraint.activateConstraints([constraint1!, constraint2!, constraint3!, constraint4!])
 	}
 	
 	func startNewGame() -> Void {
@@ -139,7 +155,7 @@ class ViewController: UIViewController {
 			// TODO: test
 			
 			var perfectMatch = false
-            if abs(previousRange.effectiveWidth - self.gameRange.effectiveWidth) < 10.0 {
+            if abs(previousRange.effectiveWidth - self.gameRange.effectiveWidth) < 5.0 {
 				gameRange = previousRange
 				perfectMatch = true
                 
