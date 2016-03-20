@@ -32,6 +32,8 @@ class ViewController: UIViewController {
 	var currentBuldingBlock: UIView?
 	
 	var scoreLabel: UILabel?
+    
+    var debugTime: DebugButton?
 	
 	var restartButton: UIButton?
 	
@@ -86,6 +88,12 @@ class ViewController: UIViewController {
 		self.restartButton?.hidden = true
 		self.restartButton?.addTarget(self, action: "startNewGame", forControlEvents: UIControlEvents.TouchUpInside)
 		self.view.addSubview(self.restartButton!)
+        
+        self.debugTime = DebugButton(title: "TimeInterval", initialValue: 1, delegate: self, frame: CGRectZero)
+        self.debugTime?.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.debugTime!)
+        
+        // TestViewToDebug
 	}
 	
 	func setupConstraints() -> Void {
@@ -94,7 +102,10 @@ class ViewController: UIViewController {
 		
 		let constraint3 = self.scoreLabel?.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 20.0)
 		let constraint4 = self.restartButton?.topAnchor.constraintEqualToAnchor(self.scoreLabel?.bottomAnchor, constant: 20.0)
-		NSLayoutConstraint.activateConstraints([constraint1!, constraint2!, constraint3!, constraint4!])
+        
+        let con1 = self.debugTime?.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 180)
+        let con2 = self.debugTime?.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor)
+		NSLayoutConstraint.activateConstraints([constraint1!, constraint2!, constraint3!, constraint4!, con1!, con2!])
 	}
 	
 	func startNewGame() -> Void {
@@ -249,15 +260,9 @@ class ViewController: UIViewController {
 			
 			
 			createNewBlockFromLeft(true, width: gameRange.effectiveWidth)
-			
-			
-			// Settle current building Block
-			
-			// Game over or not
-			
-			// If not bringup next block
 		}
 	}
+    
 	
 	func retreiveNewGameRangeWithFrame(frame: CGRect) -> EffectiveRange {
 		
@@ -359,5 +364,15 @@ class ViewController: UIViewController {
 		
 		nextStartY -= buildBlockHeight
 	}
+}
+
+extension ViewController: DebugButtonDelegate {
+    func addValue(value: Int) -> Void {
+        self.gameLevel += NSTimeInterval(value)
+    }
+    
+    func reduceValue(value: Int) -> Void {
+        self.gameLevel -= NSTimeInterval(value)
+    }
 }
 
