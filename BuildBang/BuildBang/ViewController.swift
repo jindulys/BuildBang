@@ -34,6 +34,7 @@ class ViewController: UIViewController {
 	var scoreLabel: UILabel?
     
     var debugTime: DebugButton?
+    var debugLength: DebugLength?
 	
 	var restartButton: UIButton?
 	
@@ -103,7 +104,7 @@ class ViewController: UIViewController {
 		let constraint3 = self.scoreLabel?.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 20.0)
 		let constraint4 = self.restartButton?.topAnchor.constraintEqualToAnchor(self.scoreLabel?.bottomAnchor, constant: 20.0)
         
-        let con1 = self.debugTime?.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 180)
+        let con1 = self.debugTime?.topAnchor.constraintEqualToAnchor(self.view.topAnchor, constant: 90)
         let con2 = self.debugTime?.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor)
 		NSLayoutConstraint.activateConstraints([constraint1!, constraint2!, constraint3!, constraint4!, con1!, con2!])
 	}
