@@ -34,7 +34,6 @@ class ViewController: UIViewController {
 	var scoreLabel: UILabel?
     
     var debugTime: DebugButton?
-    var debugLength: DebugLength?
 	
 	var restartButton: UIButton?
 	
